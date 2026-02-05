@@ -1,0 +1,27 @@
+{
+  "name": "MapSpoofer",
+  "version": "1.0",
+  "manifest_version": 3,
+  "permissions": [
+    "debugger",
+    "scripting",
+    "activeTab",
+    "storage"
+  ],
+  "host_permissions": [
+    "https://www.google.com/maps/*"
+  ],
+  "content_scripts": [
+    {
+      "matches": ["https://www.google.com/maps/*"],
+      "js": ["injector.js"]
+    }
+  ],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "action": {
+    "default_popup": "popup.html"
+  }
+  
+}

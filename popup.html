@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      width: 280px;
+      padding: 20px;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      background: #fafafa;
+    }
+
+    .header {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    .header h1 {
+      font-size: 18px;
+      font-weight: 600;
+      color: #1a1a1a;
+      margin-bottom: 4px;
+    }
+
+    .header .divider {
+      width: 40px;
+      height: 3px;
+      background: linear-gradient(135deg, #22c55e 0%, #16a34a 100%);
+      border-radius: 2px;
+      margin: 0 auto;
+    }
+
+    .status-card {
+      background: white;
+      border-radius: 12px;
+      padding: 16px;
+      margin-bottom: 16px;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+    }
+
+    .status-row {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      margin-bottom: 12px;
+    }
+
+    .status-dot {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background: #94a3b8;
+    }
+
+    .status-dot.active {
+      background: #22c55e;
+      box-shadow: 0 0 8px rgba(34, 197, 94, 0.5);
+    }
+
+    .status-label {
+      font-size: 14px;
+      color: #64748b;
+    }
+
+    .status-value {
+      font-weight: 600;
+      color: #1a1a1a;
+    }
+
+    .coords-section {
+      padding-top: 12px;
+      border-top: 1px solid #f1f5f9;
+    }
+
+    .coords-section.hidden {
+      display: none;
+    }
+
+    .coord-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 6px 0;
+    }
+
+    .coord-label {
+      font-size: 13px;
+      color: #94a3b8;
+      font-weight: 500;
+    }
+
+    .coord-value {
+      font-size: 13px;
+      color: #1a1a1a;
+      font-weight: 500;
+      font-family: 'SF Mono', Monaco, 'Courier New', monospace;
+    }
+
+    .btn {
+      width: 100%;
+      padding: 14px 20px;
+      font-size: 14px;
+      font-weight: 600;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      margin-bottom: 10px;
+    }
+
+    .btn:last-child {
+      margin-bottom: 0;
+    }
+
+    .btn-primary {
+      background: linear-gradient(135deg, #3b82f6 0%, #2563eb 100%);
+      color: white;
+      box-shadow: 0 4px 12px rgba(59, 130, 246, 0.3);
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 6px 16px rgba(59, 130, 246, 0.4);
+    }
+
+    .btn-danger {
+      background: linear-gradient(135deg, #ef4444 0%, #dc2626 100%);
+      color: white;
+      box-shadow: 0 4px 12px rgba(239, 68, 68, 0.3);
+    }
+
+    .btn-danger:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 6px 16px rgba(239, 68, 68, 0.4);
+    }
+
+    .btn-danger.hidden {
+      display: none;
+    }
+
+    .btn:active {
+      transform: translateY(0);
+    }
+  </style>
+</head>
+<body>
+  <div class="header">
+    <h1>MapSpoofer</h1>
+    <div class="divider"></div>
+  </div>
+
+  <div class="status-card">
+    <div class="status-row">
+      <div class="status-dot" id="statusDot"></div>
+      <span class="status-label">Status:</span>
+      <span class="status-value" id="statusText">Inactive</span>
+    </div>
+    <div class="coords-section hidden" id="coordsSection">
+      <div class="coord-row">
+        <span class="coord-label">Latitude</span>
+        <span class="coord-value" id="latValue">-</span>
+      </div>
+      <div class="coord-row">
+        <span class="coord-label">Longitude</span>
+        <span class="coord-value" id="lngValue">-</span>
+      </div>
+    </div>
+  </div>
+
+  <button class="btn btn-primary" id="pickLocationBtn">Pick Location</button>
+  <button class="btn btn-danger hidden" id="stopSpoofingBtn">Stop Spoofing</button>
+
+  <script src="popup.js"></script>
+</body>
+</html>
