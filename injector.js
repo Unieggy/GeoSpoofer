@@ -17,7 +17,7 @@ styles.textContent = `
     align-items: center;
     gap: 8px;
     padding: 14px 24px;
-    background: linear-gradient(135deg, #22c55e 0%, #16a34a 100%);
+    background: linear-gradient(135deg, #ff1414 0%, #e36803 100%);
     color: white;
     font-size: 15px;
     font-weight: 600;
