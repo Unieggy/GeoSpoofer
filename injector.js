@@ -3,8 +3,9 @@ const styles = document.createElement('style');
 styles.textContent = `
   .mapspoofer-container {
     position: fixed;
-    bottom: 24px;
-    right: 24px;
+    bottom: 50px;
+    left: 50%;
+    transform: translateX(-50%);
     z-index: 10000;
     display: flex;
     gap: 12px;
@@ -16,10 +17,10 @@ styles.textContent = `
     display: flex;
     align-items: center;
     gap: 8px;
-    padding: 14px 24px;
+    padding: 18px 36px;
     background: linear-gradient(135deg, #ff1414 0%, #e36803 100%);
     color: white;
-    font-size: 15px;
+    font-size: 18px;
     font-weight: 600;
     border: none;
     border-radius: 50px;
